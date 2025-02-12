@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('password').value;
             const cellphone = document.getElementById('telefono').value;
 
-            //inserta
+            // inserta
             const { data, error } = await supabase
                 .from('Usuario')
                 .insert([
