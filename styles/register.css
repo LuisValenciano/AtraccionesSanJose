@@ -127,3 +127,19 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #555;
 }
+
+.register-container a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.register-container a:hover {
+    color: #555;
+    text-decoration: underline;
+}
