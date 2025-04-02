@@ -1,0 +1,60 @@
+.tour-categories {
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+}
+
+.tour-categories::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+.tour-card .placeholder-img {
+    background-color: #dee2e6;
+    height: 200px;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.tour-card .placeholder-title,
+.tour-card .placeholder-text {
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border-radius: 4px;
+    height: 20px;
+    margin-bottom: 10px;
+}   
+
+.tour-card .placeholder-title {
+    width: 60%;
+}
+
+.tour-card .placeholder-text {
+    width: 80%;
+}
+
+header img {
+    max-height: 40px;
+}
+
+body {
+    background-color: #fff;
+}
+
+.card-title, .card-text {
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.bg-chepe {
+    background-image: url('/resources/chepe.PNG');
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
