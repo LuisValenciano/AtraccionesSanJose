@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // redirige a landingPage.html a los 2 segundos
                 setTimeout(() => {
                     window.location.href = 'landingPage.html';
-                }, 2000);
+                }, 1000);
             }
         });
     }
