@@ -1,17 +1,28 @@
+@font-face {
+    font-family: Cocogoose;
+    src: url(../resources/Cocogoose-Pro-Bold-trial.ttf);
+}
+@font-face {
+    font-family: Roboto;
+    src: url(../resources/Roboto-Light.ttf);
+}
+
 /* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
+
+
 body{
-    background-color: gray;
+    background-color: #fff9e5;
 }
 /* navbar lol */
 .navbar {
     position: absolute;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
     top: 0;
     left: 0;
     width: 100%;
@@ -44,8 +55,9 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
+    font-family: Roboto;
     color: white;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     transition: 0.3s;
 }
@@ -66,11 +78,12 @@ nav ul li a:hover {
 
 .btn {
     background-color: black;
+    font-family: Roboto;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 20px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     transition: 0.3s;
 }
@@ -102,12 +115,56 @@ nav ul li a:hover {
 
 .overlay {
     position: absolute;
-    bottom: 10%;
+    bottom: 5%;
     left: 5%;
     color: white;
 }
 
 .overlay h1 {
-    font-size: 60px;
+    font-size: 120px;
     font-weight: bold;
+    font-family: Cocogoose;
+}
+
+.hidden-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    padding: 50px;
+    background-color: #fff9e5;
+    margin: 50px 0;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*Diseno de parrafos del about us*/
+.text-container p{
+    font-family: Roboto;
+    color: #154267;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    max-width: 1200px;
+    margin: auto;
+}
+
+.text-container {
+    max-width: 50%;
+    text-align: left;
+}
+
+/* Diseno titulo de about us*/
+.tituloAU{
+    font-family: Cocogoose;
+    font-size: 85px;
+    color: #154267;
+    max-width: 40%
 }
