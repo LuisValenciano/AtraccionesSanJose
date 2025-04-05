@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Directorio de Lugares</title>
+  <link rel="stylesheet" href="styles/directorio.css">
+</head>
+<body>
+  <h1 class="titulo">Elige tu propia ruta</h1>
+
+  <div class="categorias">
+    <div class="card" onclick="mostrarLugares('museos')">
+      <img src="./resources/Museo nacional.png" alt="Museos">
+      <div class="texto">Museos</div>
+    </div>
+    <div class="card" onclick="mostrarLugares('restaurantes')">
+      <img src="./resources/Pinto.png" alt="Restaurantes">
+      <div class="texto">Restaurantes</div>
+    </div>
+  </div>
+
+  <div id="lugares" class="contenedor-lugares"></div>
+
+  <script src="Javascript/directorio.js"></script>
+</body>
+</html>
