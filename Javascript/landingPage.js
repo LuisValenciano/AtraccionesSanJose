@@ -49,7 +49,7 @@ async function cargarCategorias() {
 
 async function cargarAtraccionesPorCategoria(categoriaId) {
     const container = document.getElementById('tourCardsContainer');
-    container.innerHTML = ''; 
+    container.innerHTML = '';
 
     const { data: relaciones, error: relError } = await supabase
         .from('Categorias_Atracciones')
@@ -84,7 +84,7 @@ async function cargarAtraccionesPorCategoria(categoriaId) {
 
 async function cargarTodasLasAtracciones() {
     const container = document.getElementById('tourCardsContainer');
-    container.innerHTML = ''; 
+    container.innerHTML = '';
 
     const { data: atracciones, error } = await supabase
         .from('Atraccion')
@@ -121,6 +121,18 @@ function renderizarAtracciones(lista) {
             </div>
         </div>
         `;
+
+        card.addEventListener('click', () => {
+            document.getElementById('modalNombre').textContent = tour.Nombre;
+            document.getElementById('modalDescripcion').textContent = tour.Descripcion;
+            document.getElementById('modalPrecio').textContent = tour.Precio;
+            document.getElementById('modalImg').src = tour.imgLink;
+
+            // muestra el modal
+            const modal = new bootstrap.Modal(document.getElementById('attractionModal'));
+            modal.show();
+        });
+
 
         container.appendChild(card);
     });

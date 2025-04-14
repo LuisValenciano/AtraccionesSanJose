@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Explora Tours | Inicio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/litera/bootstrap.min.css" integrity="sha384-enpDwFISL6M3ZGZ50Tjo8m65q06uLVnyvkFO3rsoW0UC15ATBFz3QEhr3hmxpYsn" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
     <link rel="stylesheet" href="/styles/landingPage.css" />
     <script type="module" src="/Javascript/landingPage.js" defer></script>
 </head>
 
 <body>
     <header class="bg-white border-bottom p-3 d-flex justify-content-between align-items-center">
-        <img src="logo.png" alt="Logo" style="height: 40px" />
+        <img src="/resources/logo.png" alt="Logo" style="height: 60px" />
         <div class="form-inline">
             <input type="text" class="form-control mr-2" placeholder="Buscar tours..." />
             <button class="btn btn-primary">Buscar</button>
@@ -21,7 +23,8 @@
         </div>
     </header>
 
-    <nav class="tour-categories d-flex justify-content-start overflow-auto border-bottom py-2 px-3" id="categoryButtons">
+    <nav class="tour-categories d-flex justify-content-start overflow-auto border-bottom py-2 px-3"
+        id="categoryButtons">
         <!-- Aca van las categorias -->
     </nav>
 
@@ -32,7 +35,37 @@
     </main>
 
     <footer class="text-center py-4 mt-4 border-top">
-        <p class="mb-0">&copy; 2025 Conoce San José. Todos los derechos reservados.</p>
+        <p class="mb-0">
+            &copy; 2025 Conoce San José. Todos los derechos reservados.
+        </p>
     </footer>
+
+    <div class="modal fade" id="attractionModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalNombre"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImg" class="img-fluid rounded mb-3" alt="Imagen de la atracción" />
+                    <p id="modalDescripcion" class="mb-2"></p>
+                    <p class="text-muted mb-3">
+                        <strong>Precio desde:</strong> ₡<span id="modalPrecio"></span>
+                    </p>
+                    <button class="btn btn-primary mb-3">Reservar</button>
+                    <hr />
+                    <h6>Reseñas:</h6>
+                    <div id="modalReviews">
+                        <p class="text-muted">Aún no hay reseñas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>

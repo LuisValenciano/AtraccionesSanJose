@@ -66,3 +66,50 @@ footer {
     text-overflow: ellipsis;
     min-height: 3rem; 
 }
+
+.tour-card {
+    border-radius: 1rem; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
+    overflow: hidden; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tour-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); 
+}
+
+.form-inline .form-control {
+    border-radius: 2rem; 
+    padding: 0.5rem 1rem;
+}
+
+#modalImg {
+    max-height: 300px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 2rem; 
+}
+
+.modal-content {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.modal-body {
+    padding-top: 0;
+}
+
+#modalImg {
+    border-radius: 1rem;
+    max-height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
