@@ -32,7 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Hubo un error al registrar el usuario. Inténtalo de nuevo.');
             } else {
                 console.log('Registro exitoso:', data);
-                alert('¡Registro exitoso! Redirigiendo a la página principal...');
+                Swal.fire({
+                    title: 'Registro Exitoso',
+                    text: 'Se ha creado el usuario correctamente, redirigiendo a la página de inicio...',
+                    icon: 'success',
+                    confirmButtonText: 'Aceptar'
+                });
+
                 setTimeout(() => {
                     window.location.href = 'index.html';  // a los 2 segundos va devuelta a la pagina principal
                 }, 2000);
