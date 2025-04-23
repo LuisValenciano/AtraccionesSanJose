@@ -253,3 +253,8 @@ nav ul li a:hover {
     font-weight: bold;
     color: #004d40;
 } 
+
+
+/* Seccion de Mapa */
+
+#map { height: 180px; }

@@ -19,21 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (error || !data) {
                 console.error('Error en el inicio de sesión:', error);
-
-                Swal.fire({
-                    title: 'Error',
-                    text: 'Correo o contraseña incorrectos. Inténtalo de nuevo.',
-                    icon: 'error',
-                    confirmButtonText: 'Aceptar'
-                });
+                alert('Correo o contraseña incorrectos. Inténtalo de nuevo.');
             } else {
                 console.log('Inicio de sesión exitoso:', data);
-                Swal.fire({
-                    title: 'Bienvenido',
-                    text: 'Se ha ingresado sesion correctamente',
-                    icon: 'success',
-                    confirmButtonText: 'Aceptar'
-                });
+                alert(`Bienvenido, ${data.Name}`);
+
                 // redirige a landingPage.html a los 2 segundos
                 setTimeout(() => {
                     window.location.href = 'landingPage.html';
@@ -42,4 +32,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
