@@ -1,5 +1,8 @@
 import supabase from './supabase.js';
 
+let reservaInfoActual = null;
+
+
 const categoryContainer = document.getElementById('categoryButtons');
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -70,9 +73,8 @@ async function cargarAtraccionesPorCategoria(categoriaId) {
 
     const { data: atracciones, error: atracError } = await supabase
         .from('Atraccion')
-        .select('AtraccionId, Nombre, Descripcion, Precio, imgLink')
+        .select('AtraccionId, Nombre, Descripcion, Precio, imgLink, Capacidad')
         .in('AtraccionId', atraccionIds);
-
 
     if (atracError) {
         console.error('Error al cargar atracciones:', atracError.message);
@@ -88,8 +90,7 @@ async function cargarTodasLasAtracciones() {
 
     const { data: atracciones, error } = await supabase
         .from('Atraccion')
-        .select('AtraccionId, Nombre, Descripcion, Precio, imgLink');
-
+        .select('AtraccionId, Nombre, Descripcion, Precio, imgLink, Capacidad');
 
     if (error) {
         console.error('Error al cargar todas las atracciones:', error.message);
@@ -123,20 +124,52 @@ function renderizarAtracciones(lista) {
         `;
 
         card.addEventListener('click', () => {
-            document.getElementById('modalNombre').textContent = tour.Nombre;
-            document.getElementById('modalDescripcion').textContent = tour.Descripcion;
-            document.getElementById('modalPrecio').textContent = tour.Precio;
-            document.getElementById('modalImg').src = tour.imgLink;
-
-            // muestra el modal
-            const modal = new bootstrap.Modal(document.getElementById('attractionModal'));
-            modal.show();
+            window.location.href = `AtraccionDetails.html?id=${tour.AtraccionId}`;
         });
-
 
         container.appendChild(card);
     });
 }
+
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+
+searchButton.addEventListener('click', async () => {
+    const query = searchInput.value.trim().toLowerCase();
+
+    if (query === '') {
+        await cargarTodasLasAtracciones();
+        return;
+    }
+
+    const { data: atracciones, error } = await supabase
+        .from('Atraccion')
+        .select('AtraccionId, Nombre, Descripcion, Precio, imgLink, Capacidad');
+
+    if (error) {
+        console.error('Error al buscar atracciones:', error.message);
+        return;
+    }
+
+    const resultados = atracciones.filter((atraccion) =>
+        atraccion.Nombre.toLowerCase().includes(query)
+    );
+
+    renderizarAtracciones(resultados);
+});
+
+// Permitir búsqueda con Enter
+searchInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        searchButton.click();
+    }
+});
+
+
+
+
+
+
 
 
 
