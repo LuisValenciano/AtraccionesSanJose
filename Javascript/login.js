@@ -28,6 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             } else {
                 console.log('Inicio de sesión exitoso:', data);
+                alert(`Bienvenido, ${data.Name}`);
+
+                // Guardar datos del usuario en localStorage
+                localStorage.setItem('userId', data.UserID);
+                localStorage.setItem('userName', data.Name);
+              
                 Swal.fire({
                     title: 'Bienvenido',
                     text: 'Se ha ingresado sesion correctamente',
