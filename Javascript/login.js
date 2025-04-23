@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('Inicio de sesión exitoso:', data);
                 alert(`Bienvenido, ${data.Name}`);
 
+                // Guardar datos del usuario en localStorage
+                localStorage.setItem('userId', data.UserID);
+                localStorage.setItem('userName', data.Name);
+
                 // redirige a landingPage.html a los 2 segundos
                 setTimeout(() => {
                     window.location.href = 'landingPage.html';
