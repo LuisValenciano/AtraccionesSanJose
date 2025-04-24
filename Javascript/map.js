@@ -64,9 +64,14 @@ var restaurantes = [
     }
   ];
   
-
-// Agrega los marcadores
+// Agrega los museos
 museos.forEach(function (museo) {
-  L.marker(museo.coords).addTo(map)
+  L.marker(museo.coords, { icon: iconoMuseo }).addTo(map)
     .bindPopup(`<strong>${museo.nombre}</strong><br>${museo.descripcion}`);
+});
+
+// Agrega los restaurantes
+restaurantes.forEach(function (restaurante) {
+  L.marker(restaurante.coords, { icon: iconoRestaurante }).addTo(map)
+    .bindPopup(`<strong>${restaurante.nombre}</strong><br>${restaurante.descripcion}`);
 });
