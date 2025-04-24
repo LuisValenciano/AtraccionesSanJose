@@ -256,5 +256,18 @@ nav ul li a:hover {
 
 
 /* Seccion de Mapa */
+  #map {
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
 
-#map { height: 180px; }
+/* Diseno titulo de Mapa*/
+.tituloMap{
+    font-family: Cocogoose;
+    font-size: 80px;
+    color: #154267;
+    max-width: 40%
+}
