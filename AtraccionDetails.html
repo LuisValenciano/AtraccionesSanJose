@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detalles de Atracción</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script type="module" src="Javascript/AtraccionDetails.js" defer></script>
     <link rel="stylesheet" href="styles/AtraccionDetails.css">
+    <script type="module" src="Javascript/AtraccionDetails.js" defer></script>
 </head>
 
 <body class="bg-light">
@@ -37,9 +37,34 @@
                     <input type="date" id="fechaReserva" class="form-control" />
                     <div class="text-danger mt-1 d-none" id="errorFecha">Por favor selecciona una fecha válida.</div>
                 </div>
-                
 
                 <button class="btn btn-primary w-100" id="btnReservar">Confirmar reserva</button>
+            </div>
+        </div>
+
+        <!-- PROMEDIO DE ESTRELLAS -->
+        <hr class="my-5">
+        <div class="mt-5 text-center">
+            <h3 class="mb-3">Promedio de Calificación</h3>
+            <h1 id="promedioEstrellas" class="text-warning display-4">★ ★ ★ ★ ★</h1>
+        </div>
+
+        <!-- FILTRO Y LISTADO DE REVIEWS -->
+        <div class="mt-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="mb-0">Reseñas de los usuarios</h4>
+                <select id="filtroEstrellas" class="form-select w-auto">
+                    <option value="all">Todas</option>
+                    <option value="5">5 estrellas</option>
+                    <option value="4">4 estrellas</option>
+                    <option value="3">3 estrellas</option>
+                    <option value="2">2 estrellas</option>
+                    <option value="1">1 estrella</option>
+                </select>
+            </div>
+
+            <div id="reviewsContainer" class="list-group">
+                <!-- Las reviews se insertan aquí dinámicamente -->
             </div>
         </div>
     </div>

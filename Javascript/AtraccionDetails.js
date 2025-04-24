@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             idAtraccion: atraccion.AtraccionId,
             cantAtendidos: cantidad,
             totalPagado: total,
-            fecha: new Date(fechaSeleccionada).toISOString()
+            fecha: new Date(`${fechaSeleccionada}T12:00:00`).toISOString()
         }]);
 
         if (error) {
@@ -82,5 +82,63 @@ document.addEventListener('DOMContentLoaded', async () => {
             }, 500);
         }
     });
-});
 
+    // === REVIEWS ===
+
+    const { data: reviews, error: errorReviews } = await supabase
+        .from('Review')
+        .select('comentario, puntuacion, anonimo, Usuario(Name)')
+        .eq('idAtraccion', id);
+
+    let allReviews = reviews || [];
+
+    // Mostrar promedio de estrellas
+    if (allReviews.length > 0) {
+        const suma = allReviews.reduce((acc, r) => acc + r.puntuacion, 0);
+        const promedio = suma / allReviews.length;
+        const estrellas = Math.round(promedio);
+
+        const estrellaHtml = Array(5).fill('★').map((star, i) => `
+            <span style="font-size: 2rem; color: ${i < estrellas ? '#ffc107' : '#e4e5e9'}">${star}</span>
+        `).join('');
+        document.getElementById('promedioEstrellas').innerHTML = estrellaHtml;
+    } else {
+        document.getElementById('promedioEstrellas').textContent = 'Sin calificaciones todavía';
+    }
+
+    // Función para renderizar reviews
+    const renderReviews = (lista) => {
+        const container = document.getElementById('reviewsContainer');
+        container.innerHTML = '';
+
+        if (!lista || lista.length === 0) {
+            container.innerHTML = '<p class="text-muted">No hay reseñas aún.</p>';
+            return;
+        }
+
+        lista.forEach(review => {
+            const item = document.createElement('div');
+            item.className = 'list-group-item';
+
+            const estrellas = '★'.repeat(review.puntuacion) + '☆'.repeat(5 - review.puntuacion);
+            const nombre = review.anonimo || !review.Usuario ? 'Usuario anónimo' : review.Usuario.Name;
+
+            item.innerHTML = `
+                <strong>${nombre}</strong><br>
+                <span class="text-warning">${estrellas}</span>
+                <p class="mb-0">${review.comentario}</p>
+            `;
+
+            container.appendChild(item);
+        });
+    };
+
+    // Filtrar reviews por estrellas
+    document.getElementById('filtroEstrellas').addEventListener('change', (e) => {
+        const valor = e.target.value;
+        const filtradas = valor === 'all' ? allReviews : allReviews.filter(r => r.puntuacion === parseInt(valor));
+        renderReviews(filtradas);
+    });
+
+    renderReviews(allReviews);
+});

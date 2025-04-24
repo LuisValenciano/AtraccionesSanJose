@@ -12,16 +12,28 @@
 </head>
 
 <body>
-    <header class="bg-white border-bottom p-3 d-flex justify-content-between align-items-center">
+    <header class="bg-white border-bottom p-3 d-flex align-items-center justify-content-between">
+        <!-- Logo -->
         <img src="/resources/logo.png" alt="Logo" style="height: 60px" />
-        <div class="form-inline">
-            <input type="text" class="form-control mr-2" id="searchInput" placeholder="Buscar tours..." />
-            <button class="btn btn-primary" id="searchButton">Buscar</button>
+
+        <!-- Search bar centrada en capa independiente -->
+        <div class="flex-grow-1 d-flex justify-content-center">
+            <div class="search-wrapper">
+                <input type="text" class="form-control" id="searchInput" placeholder="Buscar tours..." />
+                <button class="btn btn-primary" id="searchButton">Buscar</button>
+            </div>
+
         </div>
-        <div>
-            <a href="#" class="btn btn-outline-secondary">Perfil</a>
+
+        <!-- Botones de usuario -->
+        <div class="d-flex align-items-center gap-2">
+            <a href="historial.html" class="btn btn-outline-primary">Mis actividades</a>
+            <a href="perfil.html" class="btn btn-outline-secondary">Perfil</a>
+            <button id="logoutBtn" class="btn btn-outline-danger">Cerrar sesión</button>
         </div>
     </header>
+
+
 
     <nav class="tour-categories d-flex justify-content-start overflow-auto border-bottom py-2 px-3"
         id="categoryButtons">
@@ -40,7 +52,7 @@
         </p>
     </footer>
 
-    <script type="module" src="/Javascript/landingPage.js"></script>    
+    <script type="module" src="/Javascript/landingPage.js"></script>
 </body>
 
 </html>

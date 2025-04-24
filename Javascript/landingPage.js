@@ -165,6 +165,12 @@ searchInput.addEventListener('keypress', (e) => {
     }
 });
 
+document.getElementById('logoutBtn')?.addEventListener('click', () => {
+    localStorage.removeItem('userId');
+    localStorage.removeItem('userName');
+    window.location.href = 'index.html';
+});
+
 
 
 
