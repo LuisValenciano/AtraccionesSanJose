@@ -1,0 +1,41 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-control[readonly] {
+    background-color: #f8f9fa;
+}
+
+.toggle-password {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 38px;
+    z-index: 2;
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.container-perfil {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.password-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.password-group input {
+    flex: 1;
+}

@@ -1,55 +1,108 @@
-/* landingPage.css */
-
-tour-categories {
-    white-space: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none; /* Firefox */
-}
-
-tour-categories::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
-}
-
-.tour-card .placeholder-img {
-    background-color: #dee2e6;
-    height: 200px;
-    border-top-left-radius: .25rem;
-    border-top-right-radius: .25rem;
-}
-
-.tour-card .placeholder-title,
-.tour-card .placeholder-text {
-    background-color: #f8f9fa;
-    color: #6c757d;
-    border-radius: 4px;
-    height: 20px;
-    margin-bottom: 10px;
-}
-
-.tour-card .placeholder-title {
-    width: 60%;
-}
-
-.tour-card .placeholder-text {
-    width: 80%;
-}
-
-header img {
-    max-height: 40px;
-}
-
+/* ====== GENERAL ====== */
 body {
     background-color: #fff;
 }
 
-.card-title, .card-text {
-    margin-bottom: 0.5rem;
+header {
+    gap: 1rem;
+    position: relative;
 }
 
 footer {
     font-size: 0.9rem;
     color: #6c757d;
 }
+
+/* ====== HEADER BUTTONS ====== */
+header .btn {
+    border-radius: 2rem;
+    padding: 0.5rem 1.25rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+header .btn+.btn {
+    margin-left: 0.5rem;
+}
+
+/* Mis actividades */
+header .btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+header .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Perfil */
+header .btn-outline-secondary {
+    color: #6c757d;
+    border-color: #ced4da;
+}
+
+header .btn-outline-secondary:hover {
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+/* Cerrar sesión */
+header .btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
+header .btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* ====== SEARCH BAR CENTRADA ====== */
+.search-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container input {
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    width: 300px;
+    max-width: 100%;
+    margin-right: 0.5rem;
+}
+
+.search-container button {
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+}
+
+/* ====== SCROLL DE CATEGORÍAS ====== */
+tour-categories {
+    white-space: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+tour-categories::-webkit-scrollbar {
+    display: none;
+}
+
+/* ====== CARD DE ATRACCIONES ====== */
+.tour-card {
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tour-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
 .tour-card .card-img-top {
     height: 200px;
     background-size: cover;
@@ -64,52 +117,63 @@ footer {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    min-height: 3rem; 
+    min-height: 3rem;
 }
 
-.tour-card {
-    border-radius: 1rem; 
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
-    overflow: hidden; 
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.card-title,
+.card-text {
+    margin-bottom: 0.5rem;
 }
 
-.tour-card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); 
+.search-container {
+    max-width: 500px;
+    width: 100%;
 }
 
-.form-inline .form-control {
-    border-radius: 2rem; 
+.search-container input {
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+}
+
+.search-container button {
+    border-radius: 2rem;
     padding: 0.5rem 1rem;
 }
 
-#modalImg {
-    max-height: 300px;
-    object-fit: cover;
-    width: 100%;
-    border-radius: 2rem; 
+.search-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.modal-content {
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+.search-wrapper input {
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    width: 280px;
 }
 
-.modal-header {
-    border-bottom: none;
-    padding-bottom: 0;
+.search-wrapper button {
+    border-radius: 2rem;
+    padding: 0.5rem 1.2rem;
 }
 
-.modal-body {
-    padding-top: 0;
-}
 
-#modalImg {
-    border-radius: 1rem;
-    max-height: 300px;
-    object-fit: cover;
-    width: 100%;
-}
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .search-container input,
+    .search-container button {
+        width: 100%;
+        margin: 0.25rem 0;
+    }
+}
