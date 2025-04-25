@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Directorio de Lugares</title>
-        <link rel="stylesheet" href="styles/directorio.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-RXf+QSDCUQs6...omw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      </head>
-      
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Directorio de Lugares</title>
+  <link rel="stylesheet" href="styles/directorio.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
 <body>
-
-  <!-- Barra de navegación -->
+    
+    <body class="fade-enter">
+  <!-- NAV -->
   <header class="main-header">
     <nav class="main-nav">
       <a href="../index.html">Explorar SJO +</a>
@@ -20,13 +20,13 @@
     </nav>
   </header>
 
-  <!-- Intro -->
+  <!-- INTRO -->
   <section class="intro-section">
-    <h1 class="titulo">Descubre lo mejor de San José</h1>
-    <p class="subtitulo">Elige tu propia ruta para tu visita</p>
+    <h1 class="titulo">Elige tu ruta para tu viaje</h1>
+    <p class="subtitulo">Descubre lo mejor de San José</p>
   </section>
-
-  <!-- Categorías -->
+  
+  <!-- CATEGORÍAS -->
   <section class="categorias-modernas" id="categorias">
     <div class="categoria-modern" onclick="mostrarLugares('museos')">
       <div class="card-image" style="background-image: url('resources/Museo nacional.png');"></div>
@@ -42,22 +42,19 @@
     </div>
   </section>
 
-  <!-- Imagen superior de la categoría -->
-  <div id="imagen-categoria"></div>
-
-  <!-- Fichas -->
+  <!-- FICHAS -->
   <section id="lugares" class="contenedor-lugares" style="display: none;"></section>
 
-  <!-- Botón volver -->
+  <!-- VOLVER -->
   <div id="volver-btn" class="volver-categorias">
     <button onclick="volverACategorias()">← Volver a categorías</button>
   </div>
 
-  <!-- Navegación -->
+  <!-- NAVEGACIÓN DE FICHAS -->
   <div class="navegacion-fichas" id="navegacion">
-    <button onclick="cambiarPagina(-1)">◀</button>
+    <button onclick="cambiarPagina(-1)"><i class="fas fa-caret-left"></i></button>
     <ul id="paginador"></ul>
-    <button onclick="cambiarPagina(1)">▶</button>
+    <button onclick="cambiarPagina(1)"><i class="fas fa-caret-right"></i></button>
   </div>
 
   <script src="Javascript/directorio.js"></script>
