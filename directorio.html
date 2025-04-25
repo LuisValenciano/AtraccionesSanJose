@@ -4,23 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Directorio de Lugares</title>
-  <link rel="stylesheet" href="styles/directorio.css">
+  <link rel="stylesheet" href="styles/directorio.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <h1 class="titulo">Elige tu propia ruta</h1>
+    
+    <body class="fade-enter">
+  <!-- NAV -->
+  <header class="main-header">
+    <nav class="main-nav">
+      <a href="../index.html">Explorar SJO +</a>
+      <a href="#">Planear tu viaje +</a>
+      <a href="directorio.html" class="active">Guía de visita +</a>
+      <a href="../login.html" class="login-btn">Iniciar Sesión</a>
+    </nav>
+  </header>
 
-  <div class="categorias">
-    <div class="card" onclick="mostrarLugares('museos')">
-      <img src="./resources/Museo nacional.png" alt="Museos">
-      <div class="texto">Museos</div>
+  <!-- INTRO -->
+  <section class="intro-section">
+    <h1 class="titulo">Elige tu ruta para tu viaje</h1>
+    <p class="subtitulo">Descubre lo mejor de San José</p>
+  </section>
+  
+  <!-- CATEGORÍAS -->
+  <section class="categorias-modernas" id="categorias">
+    <div class="categoria-modern" onclick="mostrarLugares('museos')">
+      <div class="card-image" style="background-image: url('resources/Museo nacional.png');"></div>
+      <h2>Museos</h2>
     </div>
-    <div class="card" onclick="mostrarLugares('restaurantes')">
-      <img src="./resources/Pinto.png" alt="Restaurantes">
-      <div class="texto">Restaurantes</div>
+    <div class="categoria-modern" onclick="mostrarLugares('restaurantes')">
+      <div class="card-image" style="background-image: url('resources/Pinto.png');"></div>
+      <h2>Restaurantes</h2>
     </div>
+    <div class="categoria-modern" onclick="mostrarLugares('cultura')">
+      <div class="card-image" style="background-image: url('resources/Carroza.png');"></div>
+      <h2>Cultura</h2>
+    </div>
+  </section>
+
+  <!-- FICHAS -->
+  <section id="lugares" class="contenedor-lugares" style="display: none;"></section>
+
+  <!-- VOLVER -->
+  <div id="volver-btn" class="volver-categorias">
+    <button onclick="volverACategorias()">← Volver a categorías</button>
   </div>
 
-  <div id="lugares" class="contenedor-lugares"></div>
+  <!-- NAVEGACIÓN DE FICHAS -->
+  <div class="navegacion-fichas" id="navegacion">
+    <button onclick="cambiarPagina(-1)"><i class="fas fa-caret-left"></i></button>
+    <ul id="paginador"></ul>
+    <button onclick="cambiarPagina(1)"><i class="fas fa-caret-right"></i></button>
+  </div>
 
   <script src="Javascript/directorio.js"></script>
 </body>
