@@ -1,4 +1,4 @@
-var map = L.map('map').setView([9.932, -84.079], 13);
+var map = L.map('map').setView([9.933765621963468, -84.07838400518085], 15);
 
 // Carga el mapa base desde OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
