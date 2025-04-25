@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const aboutSection = document.querySelector("#about");
+    const seccionesOcultas = document.querySelectorAll(".hidden-section");
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, { threshold: 0.3 });
 
-    observer.observe(aboutSection);
+    seccionesOcultas.forEach(section => observer.observe(section));
 });
 
 document.addEventListener("DOMContentLoaded", function () {
