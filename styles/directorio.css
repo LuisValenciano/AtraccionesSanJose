@@ -6,7 +6,85 @@
   font-family: 'Roboto';
   src: url('../resources/Roboto-Light.ttf');
 }
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+.navbar {
+  position: absolute;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-family: Roboto;
+  color: #154267;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  opacity: 0.7;
+}
+
+.nav-buttons {
+  position: absolute;
+  right: 50px;
+  top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn {
+  background-color: black;
+  font-family: Roboto;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.search-icon {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
 body {
   margin: 0;
   background-color: #fff9ee;
@@ -18,7 +96,7 @@ body {
   font-size: 48px;
   text-align: center;
   color: #172c66;
-  margin-top: 40px;
+  margin-top: 90px;
 }
 
 .categorias {

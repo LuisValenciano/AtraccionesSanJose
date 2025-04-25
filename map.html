@@ -1,32 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mapa de Atracciones</title>
 
-    <!-- Leaflet para usar el Mapa -->
+    <!-- Leaflet para mapa -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <!-- Tu CSS -->
     <link rel="stylesheet" href="/styles/map.css">
 </head>
 <body>
-     <!--SECCION MAPA-->
-     <section id="mapa" class="hidden-section">
-        <div class="container">
-            <h1 class="tituloMap">Donde quedan?</h1>
-            <!-- Div del mapa -->
-            <div id="map"></div>   
-        </div>
-    </section>
+    <body>
 
+        <!-- NAVBAR -->
+        <header class="navbar">
+          <nav>
+            <ul>
+              <li><a href="map.html">Explorar SJO +</a></li>
+              <li><a href="#">Planear tu viaje +</a></li>
+              <li><a href="directorio.html">Guía de visita +</a></li>
+            </ul>
+            <div class="nav-buttons">
+              <a href="logIn.html" class="btn">Iniciar Sesión</a>
+              <a href="#" class="search-icon">🔍</a>
+            </div>
+          </nav>
+        </header>
+      
+        <!-- CONTENIDO ORIGINAL DEL MAPA -->
+        <section id="mapa">
+          <div class="container">
+            <div class="text-container">
+              <h1 class="tituloMap">¿Dónde quedan?</h1>
+              <p>Explora las ubicaciones más representativas de San José de forma interactiva.</p>
+            </div>
+            <div class="map-container">
+              <div id="map"></div>
+            </div>
+          </div>
+        </section>
+      
     <!-- Scripts -->
-
-    <!-- Leaflet Script -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-    crossorigin=""></script>
-
-    <!-- Map Script -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="/Javascript/map.js"></script>
+
 </body>
 </html>

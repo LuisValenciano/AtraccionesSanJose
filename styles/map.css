@@ -1,16 +1,156 @@
-#map {
-    height: 400px;
-    width: 50%;
-    border-radius: 10px;
-    margin-top: 0px;
-    margin-left: 40px;
-    margin-bottom: 50x;
-  }
+@font-face {
+  font-family: Cocogoose;
+  src: url(../resources/Cocogoose-Pro-Bold-trial.ttf);
+}
+@font-face {
+  font-family: Roboto;
+  src: url(../resources/Roboto-Light.ttf);
+}
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Diseno titulo de Mapa*/
-.tituloMap{
-    font-family: Cocogoose;
-    font-size: 80px;
-    color: #154267;
-    max-width: 40%
+.navbar {
+  position: absolute;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 10;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-family: Roboto;
+  color: #154267;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  opacity: 0.7;
+}
+
+.nav-buttons {
+  position: absolute;
+  right: 50px;
+  top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn {
+  background-color: black;
+  font-family: Roboto;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.search-icon {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+
+body {
+  background-color: #fff9e5;
+  font-family: Roboto, sans-serif;
+}
+
+/* Sección del mapa */
+#mapa {
+  padding: 60px 20px;
+  background-color: #fff9e5;
+}
+
+/* Contenedor general */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+/* Contenedor del texto */
+.text-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Título principal */
+.tituloMap {
+  font-family: Cocogoose, sans-serif;
+  font-size: 85px;
+  color: #154267;
+  margin-bottom: 20px;
+}
+
+/* Parrafo debajo del título */
+.text-container p {
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  color: #154267;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Contenedor del mapa */
+.map-container {
+  width: 100%;
+  max-width: 1000px;
+  height: 500px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* El div del mapa ocupa todo el contenedor */
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Animación de aparición */
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
 }
