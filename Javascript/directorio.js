@@ -3,13 +3,7 @@ let paginaActual = 0;
 let categoriaSeleccionada = "";
 let ultimaDireccion = "derecha";
 
-// Datos de lugares
-const imagenCategoria = {
-  museos: "resources/Museo nacional.png",
-  restaurantes: "resources/Pinto.png",
-  cultura: "resources/Carroza.png"
-};
-
+// Datos de lugares 
 const lugaresData = {
   museos: [
     {
@@ -192,32 +186,30 @@ function volverACategorias() {
   document.getElementById("volver-btn").style.display = "none";
 }
 
-// Mostrar una ficha
+// Mostrar ficha actual
 function renderizarLugares() {
   const contenedor = document.getElementById("lugares");
   contenedor.innerHTML = "";
 
   const lugar = lugaresData[categoriaSeleccionada][paginaActual];
   const animacion = ultimaDireccion === "izquierda" ? "slideInLeft" : "slideInRight";
-  const imagen = imagenCategoria[categoriaSeleccionada];
 
   const card = document.createElement("div");
   card.className = "lugar-card";
   card.style.animation = `${animacion} 0.5s ease-out`;
 
   card.innerHTML = `
-    <div class="lugar-imagen" style="background-image: url('${imagen}')"></div>
+    <div class="lugar-imagen" style="background-image: url('${lugar.imagen}')"></div>
     <h3>${lugar.nombre}</h3>
-    <p><strong><i class="fa-solid fa-map-marker-alt"></i> Ubicación:</strong> ${lugar.ubicacion}</p>
+    <p><strong><i class="fa-solid fa-location-dot"></i> Ubicación:</strong> ${lugar.ubicacion}</p>
     <p><strong><i class="fa-regular fa-clock"></i> Horario:</strong> ${lugar.horario}</p>
     <p><strong><i class="fa-solid fa-dollar-sign"></i> Precio:</strong> ${lugar.precio}</p>
     <p>${lugar.descripcion}</p>
-    <a href="${lugar.enlace}" target="_blank">Visitar sitio</a>
+    ${lugar.enlace ? `<a href="${lugar.enlace}" target="_blank">Visitar sitio</a>` : ""}
   `;
 
   contenedor.appendChild(card);
 }
-
 
 // Paginador
 function renderizarPaginador() {
