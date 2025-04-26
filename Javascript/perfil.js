@@ -3,19 +3,29 @@ import supabase from './supabase.js';
 document.addEventListener('DOMContentLoaded', async () => {
     const userId = parseInt(localStorage.getItem('userId'));
     if (!userId) {
-        alert("Usuario no autenticado.");
+        Swal.fire({
+            icon: "error",
+            title: "Usuario no autenticado.",
+            text: "Usuario no autenticado.",
+            footer: '<a href="#">Why do I have this issue?</a>'
+        });
         window.location.href = "login.html";
         return;
     }
 
-    const { data: user, error } = await supabase
+    const { data: user, error } = await supabase 
         .from('Usuario')
         .select('Name, Email, Cellphone, Password')
         .eq('UserID', userId)
         .single();
 
     if (error || !user) {
-        alert("Error al cargar el perfil.");
+        Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Error al cargar el perfil.",
+            footer: '<a href="#">Why do I have this issue?</a>'
+        });
         return;
     }
 
@@ -49,7 +59,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             .eq('UserID', userId);
 
         if (updateError) {
-            alert("❌ Error al guardar cambios.");
+            Swal.fire({
+                icon: "error",
+                title: "Error al guardar cambios.",
+                text: "❌ Error al guardar cambios.",
+                footer: '<a href="#">Why do I have this issue?</a>'
+            });
             console.error(updateError);
         } else {
             alert("✅ Perfil actualizado correctamente.");

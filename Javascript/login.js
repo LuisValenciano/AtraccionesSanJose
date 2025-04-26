@@ -19,10 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (error || !data) {
                 console.error('Error en el inicio de sesión:', error);
-                alert('Correo o contraseña incorrectos. Inténtalo de nuevo.');
+                Swal.fire({
+                    icon: "error",
+                    title: "Inténtalo de nuevo",
+                    text: "Correo o contraseña incorrectos.",
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                });
             } else {
                 console.log('Inicio de sesión exitoso:', data);
-                alert(`Bienvenido, ${data.Name}`);
+                Swal.fire(`Bienvenido, ${data.Name}`);
 
                 // Guardar datos del usuario en localStorage
                 localStorage.setItem('userId', data.UserID);

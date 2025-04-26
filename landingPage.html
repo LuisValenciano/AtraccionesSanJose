@@ -14,24 +14,24 @@
 <body>
     <header class="bg-white border-bottom p-3 d-flex align-items-center justify-content-between">
         <!-- Logo -->
-        <img src="/resources/logo.png" alt="Logo" style="height: 60px" />
-
-        <!-- Search bar centrada en capa independiente -->
-        <div class="flex-grow-1 d-flex justify-content-center">
-            <div class="search-wrapper">
-                <input type="text" class="form-control" id="searchInput" placeholder="Buscar tours..." />
-                <button class="btn btn-primary" id="searchButton">Buscar</button>
-            </div>
-
+        <div class="d-flex align-items-center">
+            <img src="/resources/logo.png" alt="Logo" style="height: 60px" />
         </div>
-
+    
         <!-- Botones de usuario -->
-        <div class="d-flex align-items-center gap-2">
+        <div class="d-flex align-items-center gap-2 order-3">
             <a href="historial.html" class="btn btn-outline-primary">Mis actividades</a>
             <a href="perfil.html" class="btn btn-outline-secondary">Perfil</a>
             <button id="logoutBtn" class="btn btn-outline-danger">Cerrar sesión</button>
         </div>
+    
+        <!-- Search bar CENTRADA -->
+        <div class="search-wrapper d-flex align-items-center justify-content-center flex-grow-1">
+            <input type="text" class="form-control" id="searchInput" placeholder="Buscar tours..." />
+            <button class="btn btn-primary ml-2" id="searchButton">Buscar</button>
+        </div>
     </header>
+    
 
 
 

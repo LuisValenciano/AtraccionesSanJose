@@ -5,7 +5,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     const id = params.get('id');
 
     if (!id) {
-        alert('No se encontró la atracción.');
+        Swal.fire({
+            icon: "error",
+            title: "Ups...",
+            text: "No se encontró la atracción.",
+            footer: '<a href="#">Why do I have this issue?</a>'
+        });
         return;
     }
 
@@ -16,7 +21,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         .single();
 
     if (error || !atraccion) {
-        alert('Error cargando la atracción');
+        Swal.fire({
+            icon: "error",
+            title: "Ups...",
+            text: "Error cargando la atracción",
+            footer: '<a href="#">Why do I have this issue?</a>'
+        });
         return;
     }
 
@@ -56,7 +66,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const userId = parseInt(localStorage.getItem('userId'));
         if (!userId) {
-            alert('Usuario no autenticado. Por favor inicia sesión.');
+            Swal.fire({
+                icon: "error",
+                title: "Usuario no autenticado.",
+                text: "Por favor inicia sesión.",
+                footer: '<a href="#">Why do I have this issue?</a>'
+            });
             return;
         }
 
@@ -71,15 +86,24 @@ document.addEventListener('DOMContentLoaded', async () => {
         }]);
 
         if (error) {
-            alert('❌ No se pudo registrar la reserva');
+            Swal.fire({
+                icon: "error",
+                title: "Error!",
+                text: "❌ No se pudo registrar la reserva",
+                footer: '<a href="#">Why do I have this issue?</a>'
+            });
         } else {
-            alert('✅ Reserva registrada con éxito');
+            Swal.fire({
+                title: "Vamooos!",
+                text: "✅ Reserva registrada con éxito",
+                icon: "success"
+            });
             inputCantidad.value = 1;
             inputFecha.value = '';
 
             setTimeout(() => {
                 window.location.href = 'landingPage.html';
-            }, 500);
+            }, 2000);
         }
     });
 

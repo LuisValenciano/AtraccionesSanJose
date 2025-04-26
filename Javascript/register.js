@@ -29,12 +29,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (error) {
                 console.error('Error al registrar el usuario:', error);
-                alert('Hubo un error al registrar el usuario. Inténtalo de nuevo.');
+                Swal.fire({
+                    icon: "error",
+                    title: "Inténtalo de nuevo.",
+                    text: "Hubo un error al registrar el usuario.",
+                    footer: '<a href="#">Why do I have this issue?</a>'
+                });
             } else {
                 console.log('Registro exitoso:', data);
-                alert('¡Registro exitoso! Redirigiendo a la página principal...');
+                Swal.fire({
+                    title: "¡Registro exitoso!",
+                    text: "Redirigiendo a la página principal...!",
+                    icon: "success"
+                });
                 setTimeout(() => {
-                    window.location.href = 'index.html';  // a los 2 segundos va devuelta a la pagina principal
+                    window.location.href = 'index.html';  // a los 2 segundos va devuelta a la pagina principal  
                 }, 2000);
             }
         });

@@ -26,7 +26,7 @@ renderStars();
 document.addEventListener('DOMContentLoaded', async () => {
     const userId = parseInt(localStorage.getItem('userId'));
     if (!userId) {
-        alert('Debes iniciar sesión para ver tus reservas.');
+        
         window.location.href = 'login.html';
         return;
     }
@@ -45,7 +45,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById('reservasContainer');
 
     if (historialError || reviewError) {
-        alert('Error al cargar las reservas o reviews.');
+        Swal.fire({
+            icon: "error",
+            title: "Error...",
+            text: "Error al cargar las reservas o reviews.",
+            footer: '<a href="#">Why do I have this issue?</a>'
+        });
         console.error(historialError || reviewError);
         return;
     }
@@ -108,7 +113,12 @@ document.getElementById('btnCompletarReview').addEventListener('click', async ()
     const anonimo = document.getElementById('reviewAnonimo').checked;
 
     if (puntuacion < 1) {
-        alert('Selecciona una puntuación antes de enviar tu review.');
+        Swal.fire({
+            icon: "error",
+            title: "Error...",
+            text: "Selecciona una puntuación antes de enviar tu review.",
+            footer: '<a href="#">Why do I have this issue?</a>'
+        });
         return;
     }
 
@@ -121,11 +131,20 @@ document.getElementById('btnCompletarReview').addEventListener('click', async ()
     }]);
 
     if (error) {
-        alert('❌ Error al enviar review.');
+        Swal.fire({
+            icon: "error",
+            title: "❌ Error...",
+            text: "Error al enviar review.",
+            footer: '<a href="#">Why do I have this issue?</a>'
+        });
         console.error(error);
     } else {
-        alert('✅ ¡Gracias por tu review!');
+        Swal.fire({
+            title: "Exitoso",
+            text: "✅ ¡Gracias por tu review!",
+            icon: "success"
+        });
         bootstrap.Modal.getInstance(document.getElementById('reviewModal')).hide();
-        setTimeout(() => location.reload(), 500); // recargar para desactivar botón
+        setTimeout(() => location.reload(), 100); // recargar para desactivar botón
     }
 });
