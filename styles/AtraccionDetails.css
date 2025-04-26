@@ -1,10 +1,10 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f9;
+    background-color: #fff6e0;
 }
 
 h1 {
-    color: #2c3e50;
+    color: #172c66;
     font-weight: 700;
 }
 
@@ -18,18 +18,18 @@ img {
 
 .lead {
     font-size: 1.1rem;
-    color: #555;
+    color: #172c66;
 }
 
 .form-label {
     font-weight: 500;
-    color: #2c3e50;
+    color: #172c66;
 }
 
 input[type="number"],
 input[type="date"] {
     border-radius: 8px;
-    border: 1px solid #ced4da;
+    border: 1px solid #fff6e0;
     padding: 10px;
     font-size: 1rem;
 }
@@ -43,7 +43,7 @@ input[type="date"] {
 }
 
 #btnReservar:hover {
-    background-color: #0d6efdcc;
+    background-color: #172c66;
 }
 
 .text-danger {
@@ -67,4 +67,26 @@ input[type="date"] {
     #btnReservar {
         font-size: 1rem;
     }
+}
+
+/* Formas decorativas */
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(23, 44, 102, 0.06), transparent);
+  z-index: 0;
+}
+body::before {
+  width: 600px;
+  height: 600px;
+  top: -150px;
+  left: -150px;
+}
+body::after {
+  width: 500px;
+  height: 500px;
+  bottom: -100px;
+  right: -100px;
 }
