@@ -15,9 +15,10 @@
   box-sizing: border-box;
 }
 
+/* navbar lol */
 .navbar {
   position: absolute;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
   top: 0;
   left: 0;
   width: 100%;
@@ -44,10 +45,14 @@ nav ul {
   margin-top: 10px;
 }
 
+nav ul li {
+  display: inline;
+}
+
 nav ul li a {
   text-decoration: none;
   font-family: Roboto;
-  color: #154267;
+  color: #172c66;
   font-size: 20px;
   font-weight: bold;
   transition: 0.3s;
@@ -57,6 +62,7 @@ nav ul li a:hover {
   opacity: 0.7;
 }
 
+/* botones del nav */
 .nav-buttons {
   position: absolute;
   right: 50px;
@@ -81,15 +87,9 @@ nav ul li a:hover {
 .btn:hover {
   opacity: 0.8;
 }
-
-.search-icon {
-  font-size: 20px;
-  color: white;
-  text-decoration: none;
-}
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto;
   background: linear-gradient(to bottom right, #fff6e0, #fdf4e3);
   overflow-x: hidden;
   position: relative;
@@ -117,31 +117,6 @@ body::after {
   right: -100px;
 }
 
-/* Barra de navegación */
-.main-header {
-  background: rgba(23, 44, 102, 0.95);
-  backdrop-filter: blur(6px);
-  padding: 16px 30px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.main-nav {
-  display: flex;
-  gap: 32px;
-  justify-content: center;
-  align-items: center;
-}
-.main-nav a {
-  color: white;
-  font-family: 'Cocogoose';
-  text-decoration: none;
-  transition: 0.3s;
-}
-.main-nav a:hover,
-.main-nav a.active {
-  text-decoration: underline;
-}
 .login-btn {
   background: black;
   padding: 8px 16px;
